@@ -38,9 +38,9 @@ public class StartBehaviour extends OneShotBehaviour {
     private void sendMessageToSA() throws IOException
     {
         ACLMessage message = new ACLMessage(ACLMessage.INFORM);
-        message.setContent("start"); //???
+       // message.setContent("start"); //???
         message.setOntology("starting message ontology"); //????
-      //  message.setContentObject(new SAMessage(M,N));
+        message.setContentObject(new SAMessage(M,N));
 
         for (int i = 0; i < numOfMachines; i++)
         {
@@ -55,9 +55,9 @@ public class StartBehaviour extends OneShotBehaviour {
     private void sendMessageToMCA() throws IOException
     {
         ACLMessage message = new ACLMessage(ACLMessage.INFORM);
-        message.setContent("start"); //???
+        //message.setContent("start"); //???
         message.setOntology("starting message ontology"); //????
-        //message.setContentObject(new MCAMessage(N));
+        message.setContentObject(new MCAMessage(N));
 
         for (int i = 0; i < numOfMachines; i++)
         {

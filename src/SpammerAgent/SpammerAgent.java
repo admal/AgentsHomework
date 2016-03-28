@@ -2,7 +2,10 @@ package SpammerAgent;
 
 import Common.Behaviours.ReceiveStartMsgBehaviour;
 import Common.Interfaces.IAgentStartable;
+import Common.Messages.SAMessage;
 import jade.core.Agent;
+
+import java.io.Serializable;
 
 /**
  * Created by Adam on 2016-03-28.
@@ -10,6 +13,8 @@ import jade.core.Agent;
 public class SpammerAgent extends Agent implements IAgentStartable
 {
     private boolean isStarted = false;
+    private int N;
+    private int M;
 
     private ReceiveStartMsgBehaviour startMsgBehaviour;
 
@@ -18,11 +23,16 @@ public class SpammerAgent extends Agent implements IAgentStartable
         addBehaviour(startMsgBehaviour);
     }
     @Override
-    public void StartAgent() {
+    public void StartAgent(Serializable data) {
         isStarted = true;
         System.out.println(getLocalName() + ": started!");
+
+        SAMessage msg = (SAMessage)data;
+        N = msg.N;
+        M = msg.M;
+        System.out.println(getLocalName() + ": N = " + N );
+        System.out.println(getLocalName() + ": M = " + M );
         //add proper behaviour
-        //removeBehaviour();
         removeBehaviour(startMsgBehaviour);
     }
 }
