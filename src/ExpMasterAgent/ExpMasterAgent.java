@@ -1,5 +1,6 @@
 package ExpMasterAgent;
 
+import ExpMasterAgent.Behaviours.StartBehaviour;
 import jade.core.Agent;
 
 /**
@@ -7,10 +8,12 @@ import jade.core.Agent;
  */
 public class ExpMasterAgent extends Agent
 {
-    private int messsageSize;
-    private int numOfMessages;
+    private int messsageSize = 20;
+    private int numOfMessages = 4;
 
-    private int numOfMachines;
+    private int numOfMachines = 1;
 
-
+    public ExpMasterAgent() {
+        addBehaviour(new StartBehaviour(this, numOfMessages, messsageSize, numOfMachines));
+    }
 }

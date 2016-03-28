@@ -1,7 +1,7 @@
 package ExpMasterAgent.Behaviours;
 
-import Common.MCAMessage;
-import Common.SAMessage;
+import Common.Messages.MCAMessage;
+import Common.Messages.SAMessage;
 import jade.core.AID;
 import jade.core.Agent;
 import jade.core.behaviours.OneShotBehaviour;
@@ -40,7 +40,7 @@ public class StartBehaviour extends OneShotBehaviour {
         ACLMessage message = new ACLMessage(ACLMessage.INFORM);
         message.setContent("start"); //???
         message.setOntology("starting message ontology"); //????
-        message.setContentObject(new SAMessage(M,N));
+      //  message.setContentObject(new SAMessage(M,N));
 
         for (int i = 0; i < numOfMachines; i++)
         {
@@ -57,7 +57,7 @@ public class StartBehaviour extends OneShotBehaviour {
         ACLMessage message = new ACLMessage(ACLMessage.INFORM);
         message.setContent("start"); //???
         message.setOntology("starting message ontology"); //????
-        message.setContentObject(new MCAMessage(N));
+        //message.setContentObject(new MCAMessage(N));
 
         for (int i = 0; i < numOfMachines; i++)
         {

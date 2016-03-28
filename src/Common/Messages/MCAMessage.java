@@ -1,4 +1,4 @@
-package Common;
+package Common.Messages;
 
 import java.io.Serializable;
 
