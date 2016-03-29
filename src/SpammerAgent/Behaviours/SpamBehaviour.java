@@ -32,11 +32,6 @@ public class SpamBehaviour extends CyclicBehaviour
 
     @Override
     public void action() {
-        if (counter > N) {
-            myAgent.removeBehaviour(this);
-            return;
-        }
-
         ACLMessage msg = new ACLMessage(ACLMessage.INFORM);
         msg.setOntology("spam");
         msg.setContent("spam msg");
@@ -47,5 +42,10 @@ public class SpamBehaviour extends CyclicBehaviour
         }
         myAgent.send(msg);
         counter++;
+
+        if (counter >= N) {
+            myAgent.removeBehaviour(this);
+            return;
+        }
     }
 }

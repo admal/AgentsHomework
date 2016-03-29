@@ -34,7 +34,7 @@ public class ReceiveSpamBehaviour extends CyclicBehaviour
                 System.out.println(myAgent.getLocalName() + ": spam received");
             }
         }
-        if(counter > N)
+        if(counter >= N)
         {
             ACLMessage doneMsg = new ACLMessage(ACLMessage.INFORM);
             doneMsg.setContent("done");

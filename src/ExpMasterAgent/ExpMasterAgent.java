@@ -11,7 +11,7 @@ public class ExpMasterAgent extends Agent
     private int messsageSize = 20;
     private int numOfMessages = 4;
 
-    private int numOfMachines = 1;
+    private int numOfMachines = 2;
 
     public ExpMasterAgent() {
         addBehaviour(new StartBehaviour(this, numOfMessages, messsageSize, numOfMachines));
