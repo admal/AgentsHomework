@@ -5,4 +5,5 @@ package Common;
  */
 public class Globals {
     public static String MASTER_NAME = "master";
+    //public static int NUM_MACHINES = 1;
 }

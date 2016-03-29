@@ -40,7 +40,7 @@ public class StartBehaviour extends OneShotBehaviour {
         ACLMessage message = new ACLMessage(ACLMessage.INFORM);
        // message.setContent("start"); //???
         message.setOntology("starting message ontology"); //????
-        message.setContentObject(new SAMessage(M,N));
+        message.setContentObject(new SAMessage(M,N, numOfMachines));
 
         for (int i = 0; i < numOfMachines; i++)
         {
@@ -57,7 +57,7 @@ public class StartBehaviour extends OneShotBehaviour {
         ACLMessage message = new ACLMessage(ACLMessage.INFORM);
         //message.setContent("start"); //???
         message.setOntology("starting message ontology"); //????
-        message.setContentObject(new MCAMessage(N));
+        message.setContentObject(new MCAMessage(N, numOfMachines));
 
         for (int i = 0; i < numOfMachines; i++)
         {
