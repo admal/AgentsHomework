@@ -31,6 +31,7 @@ public class StartBehaviour extends OneShotBehaviour {
         N = n;
         M = m;
         numOfMachines = machines;
+        System.out.print("startBehaviour");
     }
 
     /**

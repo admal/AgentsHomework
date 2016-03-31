@@ -1,5 +1,6 @@
 package ExpMasterAgent;
 
+import Common.Timer;
 import ExpMasterAgent.Behaviours.ReceiveDoneMsgBehaviour;
 import ExpMasterAgent.Behaviours.StartBehaviour;
 import jade.core.Agent;
@@ -21,8 +22,9 @@ public class ExpMasterAgent extends Agent
     public void EndReceiving()
     {
 
-        //do sth with stopwatch
+        Timer timer = Timer.getInstance();
+        timer.stop();
         System.out.println("All msg done");
-
+        System.out.println("Operation finished in "+timer.getElapsedTime()+" milliseconds.");
     }
 }
