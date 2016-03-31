@@ -30,11 +30,19 @@ public class SpamBehaviour extends CyclicBehaviour
         numOfMachines = machines;
     }
 
+    private String buildMessage()
+    {
+        StringBuilder builder = new StringBuilder();
+        for(int i = 0; i < M; i++)
+            builder.append('k');
+        return builder.toString();
+    }
+
     @Override
     public void action() {
         ACLMessage msg = new ACLMessage(ACLMessage.INFORM);
         msg.setOntology("spam");
-        msg.setContent("spam msg");
+        msg.setContent(buildMessage());
         for (int i = 0; i < numOfMachines; i++)
         {
             System.out.println(myAgent.getLocalName() + ": spam sent");
