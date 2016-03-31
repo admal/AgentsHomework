@@ -2,6 +2,7 @@ package ExpMasterAgent.Behaviours;
 
 import Common.Messages.MCAMessage;
 import Common.Messages.SAMessage;
+import Common.Timer;
 import jade.core.AID;
 import jade.core.Agent;
 import jade.core.behaviours.OneShotBehaviour;
@@ -69,6 +70,8 @@ public class StartBehaviour extends OneShotBehaviour {
     @Override
     public void action() {
         try {
+            Timer timer = Timer.getInstance();
+            timer.start();
             sendMessageToMCA();
             sendMessageToSA();
 
