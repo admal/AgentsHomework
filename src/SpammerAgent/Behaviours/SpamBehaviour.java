@@ -45,13 +45,14 @@ public class SpamBehaviour extends CyclicBehaviour
         msg.setContent(buildMessage());
         for (int i = 0; i < numOfMachines; i++)
         {
-            System.out.println(myAgent.getLocalName() + ": spam sent");
+           // System.out.println(myAgent.getLocalName() + ": spam sent i = " + counter);
             msg.addReceiver(new AID("MCA"+i, AID.ISLOCALNAME));
         }
         myAgent.send(msg);
         counter++;
 
         if (counter >= N) {
+            System.out.println(myAgent.getLocalName() +": destroyed");
             myAgent.removeBehaviour(this);
             return;
         }

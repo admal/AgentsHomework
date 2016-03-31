@@ -31,10 +31,10 @@ public class ReceiveSpamBehaviour extends CyclicBehaviour
             if(msg.getOntology().equals("spam"))
             {
                 counter++;
-                System.out.println(myAgent.getLocalName() + ": spam received");
+                System.out.println(myAgent.getLocalName() + ": spam received; from: "+ msg.getSender().getLocalName() +"; i = " + counter);
             }
         }
-        if(counter >= N)
+        if(counter >= numOfMachines* N)
         {
             ACLMessage doneMsg = new ACLMessage(ACLMessage.INFORM);
             doneMsg.setContent("done");
@@ -43,6 +43,6 @@ public class ReceiveSpamBehaviour extends CyclicBehaviour
             System.out.println(myAgent.getLocalName() + ": done msg sent");
             myAgent.removeBehaviour(this);
         }
-        block();
+
     }
 }
