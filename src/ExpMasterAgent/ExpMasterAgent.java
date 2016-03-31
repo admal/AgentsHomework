@@ -1,5 +1,6 @@
 package ExpMasterAgent;
 
+import ExpMasterAgent.Behaviours.ReceiveDoneMsgBehaviour;
 import ExpMasterAgent.Behaviours.StartBehaviour;
 import jade.core.Agent;
 
@@ -15,5 +16,13 @@ public class ExpMasterAgent extends Agent
 
     public ExpMasterAgent() {
         addBehaviour(new StartBehaviour(this, numOfMessages, messsageSize, numOfMachines));
+        addBehaviour(new ReceiveDoneMsgBehaviour(this, numOfMachines));
+    }
+    public void EndReceiving()
+    {
+
+        //do sth with stopwatch
+        System.out.println("All msg done");
+
     }
 }

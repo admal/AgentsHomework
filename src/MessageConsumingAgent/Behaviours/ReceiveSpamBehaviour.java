@@ -43,5 +43,6 @@ public class ReceiveSpamBehaviour extends CyclicBehaviour
             System.out.println(myAgent.getLocalName() + ": done msg sent");
             myAgent.removeBehaviour(this);
         }
+        block();
     }
 }

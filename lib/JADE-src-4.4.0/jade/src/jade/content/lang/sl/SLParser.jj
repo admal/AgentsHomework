@@ -156,7 +156,7 @@ class SLParser {
       theParser = new SLParser(System.in);
       theParser.setSLType(Integer.parseInt(args[0]));
     } catch (Exception e) {
-      System.out.println("usage: SLParser SLLevel\n  where SLLevel can be 0 for SL0, 1 for SL1, 2 for SL2, 3 or more for full SL");
+      System.out.println("usage: SLParser SLLevel\numOfMachines  where SLLevel can be 0 for SL0, 1 for SL1, 2 for SL2, 3 or more for full SL");
       System.exit(0);
     }
     if (theParser.slType < 3)
@@ -172,10 +172,10 @@ class SLParser {
       try {
 	AbsContentElementList result = theParser.Content();
   String resultEncoded = codec.encode(result);
-	System.out.println("\n\n RESULT of SLParser.Content()=\n"+resultEncoded); 
+	System.out.println("\numOfMachines\numOfMachines RESULT of SLParser.Content()=\numOfMachines"+resultEncoded);
   AbsContentElement result2 = codec.decode(resultEncoded);
-	System.out.println("\n\n RESULT of SLCodec.decode(SLCodec.encode(SLParser.Content()))=\n"+codec.encode(result2)); 
-	System.out.println("\n\n");
+	System.out.println("\numOfMachines\numOfMachines RESULT of SLCodec.decode(SLCodec.encode(SLParser.Content()))=\numOfMachines"+codec.encode(result2));
+	System.out.println("\numOfMachines\numOfMachines");
 	//result.dump();
 	//System.out.println("AFTER ENCODING: "+codec.encode(result,o));
       }
@@ -602,7 +602,7 @@ SKIP :
 {
   " "
 | "\t"
-| "\n"
+| "\numOfMachines"
 | "\r"
 }
 
@@ -663,7 +663,7 @@ SKIP :
 {
   " "
 | "\t"
-| "\n"
+| "\numOfMachines"
 | "\r"
 }
 
